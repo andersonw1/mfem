@@ -180,7 +180,7 @@ public:
     * linear multistep methods for time-dependent partial differential
     * equations
     */
-   void Step(double &time, double dt, int cur_step, bool provisional = false);
+   double Step(double time, double dt, int cur_step, bool provisional = false);
 
    /// Return a pointer to the provisional velocity ParGridFunction.
    ParGridFunction *GetProvisionalVelocity() { return &un_next_gf; }
