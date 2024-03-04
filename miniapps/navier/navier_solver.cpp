@@ -364,7 +364,7 @@ void NavierSolver::UpdateTimestepHistory(double dt)
    un_gf.SetFromTrueDofs(un);
 }
 
-void NavierSolver::Step(double &time, double dt, int current_step,
+double NavierSolver::Step(double time, double dt, int current_step,
                         bool provisional)
 {
    sw_step.Start();
@@ -633,6 +633,9 @@ void NavierSolver::Step(double &time, double dt, int current_step,
       mfem::out << std::setprecision(8);
       mfem::out << std::fixed;
    }
+
+   return time;
+   
 }
 
 void NavierSolver::MeanZero(ParGridFunction &v)
